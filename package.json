@@ -2,6 +2,8 @@
     "name": "universityselectionguide",
     "main": "app.js",
     "dependencies": {
-        "moment": "^2.29.4"
+        "moment": "^2.29.4",
+        "express": "^4.18.2",
+        "path": "^0.12.7"
     }
 }
