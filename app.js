@@ -20,6 +20,10 @@ app.post('/insert', (request, response) => {
 // Read request handler
 app.get('/getAll', (request, response) => {
     console.log('Recieved API Call');
+    var entries = Object.entries(request.query);
+    for (const entry in entries) {
+        console.log(entry)
+    }
     response.json({
         success: true,
         entries: Object.entries(request.query)
