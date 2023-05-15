@@ -20,8 +20,6 @@ app.post('/insert', (request, response) => {
 // Read request handler
 app.get('/getAll', (request, response) => {
     console.log('Recieved API Call')
-    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-    console.log(fullUrl)
     response.json({
         success: true
     });
