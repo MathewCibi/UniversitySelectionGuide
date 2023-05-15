@@ -1,10 +1,20 @@
 const express = require('express');
 const cors = require('cors');
-const pg = require('pg');
+const { Client } = require('pg');
 const dotenv = require('dotenv');
 dotenv.config();
 
 console.log("Loading server-side backend node script.");
+
+const { Client } = require("pg");
+
+const client = new Client({
+  user: "UniversitySelectionGuideDB_losedress",
+  host: "vlv.h.filess.io",
+  database: "UniversitySelectionGuideDB_losedress",
+  password: "cd0ed39d257b526db4087ab10533ee1d527a6309",
+  port: "5432",
+});
 
 const app = express();
 
@@ -21,8 +31,22 @@ app.post('/insert', (request, response) => {
 app.get('/getAll', (request, response) => {
     console.log('Recieved API Call');
     var entries = Object.entries(request.query);
-    for (const entry in entries) {
-        console.log(entry)
+    var entry = entries[0]
+    console.log(entry)
+    if (entry[0] == "universityID") {
+        if (entry[1] == "auckland") {
+            async function main() {
+            await client.connect();
+            
+            const res = await client.query("SELECT $1::text as message", [
+                "Hello world!",
+            ]);
+            console.log(res.rows[0].message); // Hello world!
+            await client.end();
+            }
+            
+            main().catch(console.error);
+        }
     }
     response.json({
         success: true,
