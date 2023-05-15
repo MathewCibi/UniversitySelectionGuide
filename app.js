@@ -26,5 +26,6 @@ app.get('getAll', (request, response) => {
 });
 
 var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+console.log(fullUrl)
 
 app.listen(process.env.PORT, () => console.log('app is running'));
