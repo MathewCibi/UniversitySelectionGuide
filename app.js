@@ -34,13 +34,13 @@ app.get('/getAll', (request, response) => {
     if (entry[0] == "universityID") {
         if (entry[1] == "auckland") {
             async function main() {
-            await client.connect();
-            
-            const res = await client.query("SELECT $1::text as message", [
-                "Hello world!",
-            ]);
-            console.log(res.rows[0].message); // Hello world!
-            await client.end();
+                await client.connect();
+                
+                const res = await client.query("SELECT $1::text as message", [
+                    "Hello world!",
+                ]);
+                console.log(res.rows[0].message); // Hello world!
+                await client.end();
             }
             
             main().catch(console.error);
