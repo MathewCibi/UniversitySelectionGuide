@@ -6,8 +6,6 @@ dotenv.config();
 
 console.log("Loading server-side backend node script.");
 
-const { Client } = require("pg");
-
 const client = new Client({
   user: "UniversitySelectionGuideDB_losedress",
   host: "vlv.h.filess.io",
