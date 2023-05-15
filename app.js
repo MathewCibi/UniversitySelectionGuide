@@ -25,4 +25,6 @@ app.get('getAll', (request, response) => {
     });
 });
 
+var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+
 app.listen(process.env.PORT, () => console.log('app is running'));
