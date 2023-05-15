@@ -20,11 +20,10 @@ app.post('/insert', (request, response) => {
 // Read request handler
 app.get('/getAll', (request, response) => {
     console.log('Recieved API Call');
-    console.log(Object.entries(request.query));
     response.json({
-        success: true
+        success: true,
+        entries: Object.entries(request.query)
     });
-    response.end();
 });
 
 
