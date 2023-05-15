@@ -1,13 +1,10 @@
 const express = require('express');
 const pg = require('pg')
-const path = require('path');
 
-console.log("Hello from Node!")
+console.log("Loading server-side backend node script.")
 
 const app = express();
-const publicPath = path.join(__dirname);
 
-app.use(express.static(publicPath));
 app.use(express.json());
 app.use(express.urlencoded({extended : false}));
 
