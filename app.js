@@ -32,7 +32,13 @@ app.get('/insert', (request, response) => {
         var teaching = request.query.teaching;
         var community = request.query.community;
         
-        client.query(`INSERT INTO auckland (${id},${name},${opinion},${accomodation},${teaching},${community}`);
+        client.query(`INSERT INTO auckland (${id},${name},${opinion},${accomodation},${teaching},${community}`, (error, response) => {
+            if (!error) {
+                console.log(res.rows);
+            } else {
+                console.log("Error Occured: " + error.message)
+            }
+        });
 
         response.json({
             success: true
