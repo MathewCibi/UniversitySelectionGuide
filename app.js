@@ -13,24 +13,13 @@ const client = new Client({
   password: "cd0ed39d257b526db4087ab10533ee1d527a6309",
   port: "5432",
 });
+await client.connect();
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended : false}));
-
-async function getAll(database) {
-    await client.connect();
-    
-    const res = await client.query("SELECT * from " + database, [
-        "Success",
-    ]);
-    console.log(res.rows[0].message);
-    await client.end();
-}
-
-
 
 // Post
 app.post('/insert', (request, response) => {
@@ -47,7 +36,14 @@ app.get('/getAll', (request, response) => {
     console.log(entry)
     if (entry[0] == "universityID") {
         if (entry[1] == "auckland") {
-            getAll("auckland").catch(console.error);
+            client.query('select * from Auckland', (error, response) => {
+                if (!error) {
+                    console.log(res.rows);
+                } else {
+                    console.log("Error Occured: " + error.message)
+                }
+                client.end();
+            });
         }
     }
     response.json({
