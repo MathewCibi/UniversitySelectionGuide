@@ -20,10 +20,24 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended : false}));
 
+async function getAll(database) {
+    await client.connect();
+    
+    const res = await client.query("SELECT * from " + database, [
+        "Success",
+    ]);
+    console.log(res.rows[0].message);
+    await client.end();
+}
+
+
+
 // Post
 app.post('/insert', (request, response) => {
 
 });
+
+
 
 // Read request handler
 app.get('/getAll', (request, response) => {
@@ -33,17 +47,7 @@ app.get('/getAll', (request, response) => {
     console.log(entry)
     if (entry[0] == "universityID") {
         if (entry[1] == "auckland") {
-            async function main() {
-                await client.connect();
-                
-                const res = await client.query("SELECT $1::text as message", [
-                    "Hello world!",
-                ]);
-                console.log(res.rows[0].message); // Hello world!
-                await client.end();
-            }
-            
-            main().catch(console.error);
+            getAll("auckland").catch(console.error);
         }
     }
     response.json({
