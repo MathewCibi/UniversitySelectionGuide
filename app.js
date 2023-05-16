@@ -25,14 +25,13 @@ app.get('/insert', (request, response) => {
     console.log('Posting!');
     try {
         // PRONE TO SQL INJECTION.
-        var id = request.query.id;
         var name = request.query.name;
         var opinion = request.query.opinion;
         var accomodation = request.query.accomodation;
         var teaching = request.query.teaching;
         var community = request.query.community;
         
-        client.query(`INSERT INTO auckland (${id},${name},${opinion},${accomodation},${teaching},${community});`, (error, response) => {
+        client.query(`INSERT INTO auckland (name, opinion, accomodation, teaching, community) VALUES ('${name}','${opinion}','${accomodation}',${teaching},${community});`, (error, response) => {
             if (!error) {
                 console.log(res.rows);
             } else {
