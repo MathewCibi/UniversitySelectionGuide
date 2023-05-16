@@ -43,7 +43,6 @@ app.get('/getAll', (request, response) => {
                 } else {
                     console.log("Error Occured: " + error.message)
                 }
-                client.end();
             });
         }
     }
