@@ -2,19 +2,17 @@ const express = require('express');
 const cors = require('cors');
 const { Client } = require('pg');
 const dotenv = require('dotenv');
+
 dotenv.config();
 
 console.log("Loading server-side backend node script.");
-
-const client = new Client({
-  user: "UniversitySelectionGuideDB_losedress",
-  host: "vlv.h.filess.io",
-  database: "UniversitySelectionGuideDB_losedress",
-  password: "cd0ed39d257b526db4087ab10533ee1d527a6309",
-  port: "5432",
+const connectionString = process.env.CONNECTION_STRING
+var client = new Client(connectionString);
+client.connect(function(error) {
+    if (error) {
+        return console.error("Could not connect to postgres", error);
+    }
 });
-
-client.connect();
 
 const app = express();
 
