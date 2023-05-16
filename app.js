@@ -22,7 +22,27 @@ app.use(express.urlencoded({extended : false}));
 
 // Post
 app.post('/insert', (request, response) => {
+    console.log('Posting!');
+    var entries = Object.entries(request.query)[0];
+    try {
+        // PRONE TO SQL INJECTION.
+        var id = entries[0];
+        var name = entries[1];
+        var opinion = entries[2];
+        var accomodation = entries[3];
+        var teaching = entries[4];
+        var community = entries[5];
 
+        client.query(`INSERT INTO auckland (${id},${name},${opinion},${accomodation},${teaching},${community}`);
+
+        response.json({
+            success: false
+        })
+    } catch (error) {
+        response.json({
+            success: false
+        })
+    }
 });
 
 
