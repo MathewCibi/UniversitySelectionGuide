@@ -32,16 +32,19 @@ app.get('/insert', (request, response) => {
         var accomodation = entries[3];
         var teaching = entries[4];
         var community = entries[5];
-
+        
         client.query(`INSERT INTO auckland (${id},${name},${opinion},${accomodation},${teaching},${community}`);
 
         response.json({
-            success: false
-        })
+            success: true,
+            entries: entries
+        });
     } catch (error) {
+        console.log(error);
         response.json({
-            success: false
-        })
+            success: false,
+            error: error
+        });
     }
 });
 
