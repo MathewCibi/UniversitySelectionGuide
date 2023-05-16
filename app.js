@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended : false}));
 
 // Post
-app.post('/insert', (request, response) => {
+app.get('/insert', (request, response) => {
     console.log('Posting!');
     var entries = Object.entries(request.query)[0];
     try {
