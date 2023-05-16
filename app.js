@@ -13,7 +13,8 @@ const client = new Client({
   password: "cd0ed39d257b526db4087ab10533ee1d527a6309",
   port: "5432",
 });
-await client.connect();
+
+client.connect();
 
 const app = express();
 
