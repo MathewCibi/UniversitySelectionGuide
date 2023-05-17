@@ -20,33 +20,58 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended : false}));
 
+function isNumeric(str) {
+    if (typeof str != "string") return false
+    return !isNaN(str) && 
+           !isNaN(parseFloat(str))
+}
+
 // Post
-app.get('/insert', (request, response) => {
+app.get('/post', (request, response) => {
     console.log('Posting!');
     try {
+        const query_text = "INSERT INTO $1 (name, opinion, accommodation, teaching, community) VALUES ($2, $3, $4, %5, $6)"
         // PRONE TO SQL INJECTION.
+        var table = request.query.table;
         var name = request.query.name;
         var opinion = request.query.opinion;
-        var accomodation = request.query.accomodation;
+        var accommodation = request.query.accommodation;
         var teaching = request.query.teaching;
         var community = request.query.community;
-        
-        client.query(`INSERT INTO auckland (name, opinion, accommodation, teaching, community) VALUES ('${name}','${opinion}','${accomodation}',${teaching},${community});`, (error, response) => {
-            if (!error) {
-                console.log(res.rows);
-            } else {
-                console.log("Error Occured: " + error.message)
-            }
-        });
 
-        response.json({
-            success: true
+        if (name == "" || isNumeric(str)) {
+            response.json({
+                success: false,
+                message: "The format for name is not correct, Please try again"
+            });
+        }
+
+        if (opinion == "" || isNumeric(opinion)) {
+            response.json({
+                success: false,
+                message: "The format for opinion is not correct, Please try agian"
+            })
+        }
+
+        const values = [table, name, opinion, accommodation, teaching, community];
+
+        client.query(query_text, values).then((res) => {
+            response.json({
+                success: true,
+                message: "Your review has been added!"
+            });
+        }).catch(err => {
+            console.log(err.stack);
+            response.json({
+                success: false,
+                message: "Something went wrong, Please try again"
+            });
         });
     } catch (error) {
         console.log(error);
         response.json({
             success: false,
-            error: error
+            message: "Something went wrong, Please try again"
         });
     }
 });
