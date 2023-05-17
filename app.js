@@ -51,8 +51,6 @@ app.get('/insert', (request, response) => {
     }
 });
 
-
-
 // Read request handler
 app.get('/getAll', (request, response) => {
     console.log('Recieved API Call');
