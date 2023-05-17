@@ -62,16 +62,21 @@ app.get('/getAll', (request, response) => {
             client.query('select * from Auckland', (error, response) => {
                 if (!error) {
                     console.log(response.rows);
+                    response.json({
+                        success: true,
+                        entries: response.rows
+                    });
                 } else {
-                    console.log("Error Occured: " + error.message)
+                    console.log("Error Occured: " + error.message);
+                    response.json({
+                        success: false,
+                        entries: Object.entries(request.query)
+                    });
                 }
             });
         }
     }
-    response.json({
-        success: true,
-        entries: Object.entries(request.query)
-    });
+    
 });
 
 
