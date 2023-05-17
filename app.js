@@ -61,17 +61,19 @@ app.get('/post', (request, response) => {
                 message: "Your review has been added!"
             });
         }).catch(err => {
-            console.log(err.stack);
+            console.log(err);
             response.json({
                 success: false,
-                message: "Something went wrong, Please try again"
+                message: "Something went wrong, Please try again",
+                error: err
             });
         });
     } catch (error) {
         console.log(error);
         response.json({
             success: false,
-            message: "Something went wrong, Please try again"
+            message: "Something went wrong, Please try again",
+            error: error
         });
     }
 });
