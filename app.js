@@ -61,7 +61,7 @@ app.get('/getAll', (request, response) => {
         if (entry[1] == "auckland") {
             client.query('select * from Auckland', (error, response) => {
                 if (!error) {
-                    console.log(res.rows);
+                    console.log(response.rows);
                 } else {
                     console.log("Error Occured: " + error.message)
                 }
