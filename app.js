@@ -39,7 +39,7 @@ app.get('/post', (request, response) => {
         var teaching = request.query.teaching;
         var community = request.query.community;
 
-        if (name == "" || isNumeric(str)) {
+        if (name == "" || isNumeric(name)) {
             response.json({
                 success: false,
                 message: "The format for name is not correct, Please try again"
