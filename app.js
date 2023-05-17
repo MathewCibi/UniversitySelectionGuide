@@ -30,7 +30,7 @@ function isNumeric(str) {
 app.get('/post', (request, response) => {
     console.log('Posting!');
     try {
-        const query_text = "INSERT INTO $1 (name, opinion, accommodation, teaching, community) VALUES ($2, $3, $4, %5, $6)"
+        const query_text = "INSERT INTO $1 (name, opinion, accommodation, teaching, community) VALUES ($2, $3, $4, $5, $6)"
         // PRONE TO SQL INJECTION.
         var table = request.query.table;
         var name = request.query.name;
