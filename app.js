@@ -59,12 +59,12 @@ app.get('/getAll', (request, response) => {
     console.log(entry)
     if (entry[0] == "universityID") {
         if (entry[1] == "auckland") {
-            client.query('select * from Auckland', (error, response) => {
+            client.query('select * from Auckland', (error, res) => {
                 if (!error) {
-                    console.log(response.rows);
+                    console.log(res.rows);
                     response.json({
                         success: true,
-                        entries: response.rows
+                        entries: res.rows
                     });
                 } else {
                     console.log("Error Occured: " + error.message);
