@@ -30,9 +30,12 @@ function isNumeric(str) {
 app.get('/post', (request, response) => {
     console.log('Posting!');
     try {
-        const query_text = "INSERT INTO $1 (name, opinion, accommodation, teaching, community) VALUES ($2, $3, $4, $5, $6);";
+        var table = "auckland";
+        if (request.query.table_id == 1) { table = "otago";}
+        
+        const query_text = "INSERT INTO auckland (name, opinion, accommodation, teaching, community) VALUES ($1, $2, $3, $4, $5);";
         // PRONE TO SQL INJECTION.
-        var table = request.query.table;
+        
         var name = request.query.name;
         var opinion = request.query.opinion;
         var accommodation = request.query.accommodation;
@@ -53,7 +56,7 @@ app.get('/post', (request, response) => {
             })
         }
 
-        client.query(query_text, [table, name, opinion, accommodation, teaching, community], (err, res) => {
+        client.query(query_text, [name, opinion, accommodation, teaching, community], (err, res) => {
             if (err) {
                 console.log(err);
                 response.json({
@@ -68,7 +71,7 @@ app.get('/post', (request, response) => {
                 });
             }
         });
-        
+
     } catch (error) {
         console.log(error);
         response.json({
