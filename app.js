@@ -53,19 +53,22 @@ app.get('/post', (request, response) => {
             })
         }
 
-        client.query(query_text, [table, name, opinion, accommodation, teaching, community]).then((res) => {
-            response.json({
-                success: true,
-                message: "Your review has been added!"
-            });
-        }).catch(err => {
-            console.log(err);
-            response.json({
-                success: false,
-                message: "Something went wrong, Please try again",
-                error: err
-            });
+        client.query(query_text, [table, name, opinion, accommodation, teaching, community], (err, res) => {
+            if (err) {
+                console.log(err);
+                response.json({
+                    success: false,
+                    message: "Something went wrong, Please try again",
+                    error: err
+                });
+            } else {
+                response.json({
+                    success: true,
+                    message: "Your review has been added!"
+                });
+            }
         });
+        
     } catch (error) {
         console.log(error);
         response.json({
