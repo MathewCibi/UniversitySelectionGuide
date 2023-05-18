@@ -36,7 +36,6 @@ app.get('/post', (request, response) => {
         // Were using a parameterized query which prevents SQL Injection!!! :woo!:
         const query_text = "INSERT INTO auckland (name, opinion, accommodation, teaching, community) VALUES ($1, $2, $3, $4, $5);";
         
-        
         var name = request.query.name;
         var opinion = request.query.opinion;
         var accommodation = request.query.accommodation;
@@ -82,6 +81,27 @@ app.get('/post', (request, response) => {
         });
     }
 });
+
+app.get('/getRandom', (request, response) => {
+    console.log('Recieved API Call');
+    var table = 'auckland';
+    if (request.query.table_id==1) {table='otago';}
+    const query_text = `SELECT name, opinion FROM ${table} ORDER BY RANDOM();`;
+    client.query(query_text, (error, res) => {
+        if (error) {
+            console.log(error);
+            response.json({
+                success: false,
+                error: error
+            });
+        } else {
+            response.json({
+                success: true,
+                message: res.rows
+            });
+        }
+    });
+})
 
 // Read request handler
 app.get('/getAll', (request, response) => {
