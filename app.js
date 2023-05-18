@@ -86,7 +86,7 @@ app.get('/getRandom', (request, response) => {
     console.log('Recieved API Call');
     var table = 'auckland';
     if (request.query.table_id==1) {table='otago';}
-    const query_text = `SELECT name, opinion FROM ${table} ORDER BY RANDOM();`;
+    const query_text = `SELECT name, opinion FROM ${table} ORDER BY RANDOM() LIMIT 5;`;
     client.query(query_text, (error, res) => {
         if (error) {
             console.log(error);
