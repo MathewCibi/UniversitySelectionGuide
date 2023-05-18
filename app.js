@@ -33,8 +33,9 @@ app.get('/post', (request, response) => {
         var table = "auckland";
         if (request.query.table_id == 1) { table = "otago";}
         
+        // Were using a parameterized query which prevents SQL Injection!!! :woo!:
         const query_text = "INSERT INTO auckland (name, opinion, accommodation, teaching, community) VALUES ($1, $2, $3, $4, $5);";
-        // PRONE TO SQL INJECTION.
+        
         
         var name = request.query.name;
         var opinion = request.query.opinion;
@@ -55,8 +56,8 @@ app.get('/post', (request, response) => {
                 message: "The format for opinion is not correct, Please try again"
             })
         }
-
-        client.query(query_text, [name, opinion, accommodation, teaching, community], (err, res) => {
+        const values = [name, opinion, accommodation, teaching, community];
+        client.query(query_text, values, (err, res) => {
             if (err) {
                 console.log(err);
                 response.json({
