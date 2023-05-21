@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #808782;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+}
+
+#main {
+    flex: 1;
+    background: #808782;
+    flex-direction: row;
+    align-items: stretch;
+    display: flex;
+}
+
+#top_header_box {
+    background: #2C3A68;
+    height: 50%;
+}
+
+#top_header_box h1 {
+    position: absolute;
+    width: 526px;
+    height: 45px;
+    /*calc(40px + 5% + 40px + 2%)*/
+    left: calc(120px + 40px + 10px + 40px);
+    margin-top: 10px;
+
+    font-family: 'Bayon';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 52px;
+    /* or 116px */
+
+    display: flex;
+    align-items: center;
+
+    color: #E8E5EA;
+}
+
+#top_header_box #line_one {
+    position: absolute;
+    margin-left: calc(40px + 120px);
+    width: 15px;
+    height: 120px;
+    background: #954535;
+}
+
+#top_header_box #line_two {
+    position: absolute;
+    margin-left: calc(40px + 120px + 15px);
+    width: 15px;
+    height: 120px;
+    background: #000000;
+}
+
+#bottom_header_box {
+    background: #1B233F;
+    flex: 1;
+}
+
+#bottom_header_box #home {
+    position: absolute;
+    margin-top: 10px;
+    /*calc(40px + 5% + 40px + 2%)*/
+    left: calc(120px + 40px + 10px + 40px);
+    width: 200px;
+    height: 40px;
+    align-items: center;
+    background: #E8E5EA;
+    border-radius: 10px;
+}
+
+#bottom_header_box #review_button {
+    position: absolute;
+    /*calc(40px + 5% + 40px + 200px + 20px + 2%)*/
+    margin-top: 10px;
+    left: calc(120px + 30px + 40px + 40px + 200px);
+    width: 200px;
+    height: 40px;
+    align-items: center;
+    background: #E8E5EA;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+#bottom_header_box #faq_button {
+    position: absolute;
+    margin-top: 10px;
+    /*calc(40px + 5% + 40px + 400px + 40px + 2%)*/
+    left: calc(120px + 40px + 20px + 40px + 200px + 200px + 30px);
+    width: 82px;
+    height: 40px;
+    align-items: center;
+    background: #E8E5EA;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+#bottom_header_box #home:hover {
+    background: #CBC9CC;
+}
+
+#bottom_header_box #review_button:hover {
+    background: #CBC9CC;
+}
+
+#bottom_header_box #faq_button:hover:hover {
+    background: #CBC9CC;
+}
+
+#bottom_header_box h1 {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 18px;
+
+    color: #000000;
+}
+
+#university_logo {
+    left: 40px;
+    position: absolute;
+    height: 120px;
+    width: 120px;
+}
+
+#university_logo img {
+    width: 100%; /* or any custom size */
+    height: 100%; 
+    object-fit: contain;
+}
+
+.shielded_site {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0.6vw;
+    right: auto;
+    z-index: 10;
+}
+
+.seperator_box {
+    width: 40px;
+}
+
+.content_holder_box {
+    background: #E8E5EA;
+    width: calc(100% - 40px - 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+#main {
+    flex: 1;
+    background: #808782;
+    flex-direction: row;
+    align-items: stretch;
+    display: flex;
+}
+
+.box_container {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.box {
+    width: 50%;
+    flex: 1;
+    padding: 2%;
+    position: relative;
+}
+
+#faq_image {
+    width: 100%;
+    object-fit: fill;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+#content_header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#content_header h2 {
+    font-family: 'Bayon';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10vh;
+
+    line-height: 10vh;
+    color: #000000;
+
+    text-align: center;
+    display: inline-block;
+    margin-right: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#content_header #credit {
+    font-family: 'Bayon';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 3vh;
+
+    line-height: 10vh;
+    color: #000000;
+
+    text-align: left;
+    display: inline-block;
+    margin-right: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#content_header h2::after {
+    display: block;
+    width: 0%;
+    height: 1vh;
+    content: "";
+    background-color: rebeccapurple;
+    animation: grow ease-in-out forwards 1s;
+}
+
+@keyframes grow {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+.content_accordion {
+    margin-top: 35px;
+    margin-right: 50px;
+}
+
+.question_answer {
+    width: 100%;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title_question {
+    margin: 1.4rem 0rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #000;
+}
+  
+.question_btn {
+    font-size: 1.5rem;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+  
+.up_icon {
+    display: none;
+}
+
+.answer {
+    font-size: 1rem;
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    height: 0;
+}
+
+.title_question {
+    margin: .5rem 0rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+}
+  
+.question_btn {
+    font-size: 1.5rem;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+  
+.up_icon {
+    display: none;
+}
+
+.show_text .answer {
+    opacity: 0;
+    display: block;
+    animation: fade forwards linear 0.5s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+        height: 0;
+    }  
+
+    100% {
+        opacity: 1;
+        height: 100%;
+    }
+}
+
+  
+.show_text .up_icon {
+    display: inline;
+}
+  
+.show_text .down_icon {
+    display: none;
+}

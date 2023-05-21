@@ -1,0 +1,124 @@
+/* Review Form CSS */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(128, 135, 130, .8);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.overlay_wrapper{
+    margin: 70px;
+    padding: 20px;
+    background: #e7e7e7;
+    border-radius: 5px;
+    width: 40%;
+    position: relative;
+    transition: all 1s ease-in-out;
+    left: calc(20% + 90px);
+    z-index: 10;
+}
+
+.overlay_wrapper h2 {
+    font-family: 'Bayon';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 26px;
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.overlay_wrapper .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.overlay_wrapper .overlay_content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+.overlay_container {
+	border-radius: 5px;
+	background-color: #e7e7e7;
+	padding: 20px 0;
+}
+
+form label {
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 3px;
+    font-family: 'Bayon';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 24px;
+    margin-top: 0;
+    line-height: 24px;
+}
+
+input[type=text], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+input[type=number], select {
+    width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+input[type="submit"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	background-color: #413b3b;
+	color: #fff;
+	padding: 15px 50px;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.overlay_wrapper hr {
+    height: 5px;
+    background-color: #808782;
+    border: #808782;
+    margin-bottom: 10px;
+}

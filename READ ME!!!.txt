@@ -1,0 +1,10 @@
+Hello!
+I just wanted to let you know that if,
+The website's rating and review system isn't loading for you,
+It is not broken! I am using a free provider for hosting my REST API
+This service automatically shuts down the web service if no traffic has been detected.
+Simply wait a little bit until the provider starts the web service, It will start once
+you open the review page as my website will send a request to the provider and letting them know 
+that you need to use the service.
+
+Thats all I wanted to say! Thank you for your time!
