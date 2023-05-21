@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Selection Guide</title>
+    <link media="screen" href="../styles/university_page.css" rel="stylesheet">
+    <link media="screen" href="../styles/review.css" rel="stylesheet">
+    <script src="../scripts/swiper-bundle.min.js"></script>
+    <script src="../scripts/jQuery.js"></script>
+    <link href="../styles/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Merriweather&family=Tilt+Warp&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="header">
+        <!-- Header section and navigation bar. -->
+        <div id="top_header_box">
+            <a href="../index.html">
+                <h1>University Selection Guide</h1>
+            </a>
+
+            <!-- Vertical stripes next to the logo image. -->
+            <div id="line_one"></div>
+            <div id="line_two"></div>
+            <div class="shielded_site">
+                <a href="#" id="shielded-logo">
+                    <img alt="shielded" src="https://shielded.co.nz/img/custom-logo.png" height="60" width="60"></a>
+                <script src="https://staticcdn.co.nz/embed/embed.js"></script>
+                <script>
+                    (function () {
+                        window.onload = function () {
+                            var frameName = new ds07o6pcmkorn({
+                                openElementId: "#shielded-logo",
+                                modalID: "modal",
+                            });
+                            frameName.init();
+                        }
+                    })();
+                </script>
+            </div>
+        </div>
+        <div id="bottom_header_box">
+            <!-- Takes you to page that shows all Universities in New Zealand. -->
+            <a href="../index.html">
+                <div id="home">
+                    <h1>Home</h1>
+                </div>
+            </a>
+            <!-- Takes you to the reviews page to add a review. -->
+            <a href="#add_review" id="review_button">
+                <h1>Add Your Review</h1>
+            </a>
+            <!-- Takes you to the Frequently Asked Questions page. -->
+            <a href="/pages/faq.html" id="faq_button">
+                <h1>FAQs</h1>
+            </a>
+        </div>
+        <div id="university_logo">
+            <a href="UNIVERSITY LINK HERE"><img src="UNIVERSITY LOGO HERE" id="university_logo_img"
+                    alt="University Logo"></a>
+        </div>
+    </div>
+    <div id="main">
+
+        <div class="left_seperator_box"></div>
+        <div class="content_holder_box">
+            <div id="header_container">
+                <h2>University of</h2>
+                <!-- Streches Text to fill container horizontally. -->
+                <div class="strech_div">
+                    <!-- COPY THIS FOR EVERY LETTER IN UNIVERSITY NAME -->
+                    <!--<h1><a style="text-decoration:none" href=""LINK TO UNIVERSITY HERE">a</a></h1>-->
+                </div>
+
+            </div>
+            <div>
+                <hr class="underline_type_2">
+                <div id="secondary_nav_bar">
+                    <a href="LINK TO UNIVERSITY RATING PAGE" id="secondary_nav_button">
+                        <h1>Goto Reviews</h1>
+                    </a>
+                    <a href="LINK TO UNIVERSITY WEBSITE" id="secondary_nav_button">
+                        <h1>Goto Offical Website</h1>
+                    </a>
+                </div>
+                <hr class="underline_type_2">
+                <div id="content_container">
+                    <div class="box_container">
+                        <div class="box">
+                            <p class="text_block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint
+                                consequatur repellat ex alias architecto itaque dolore repudiandae quam magni obcaecati,
+                                nostrum harum ut earum id, libero eum adipisci iure aliquam!
+                                <br><br>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatem a
+                                dolorum aliquid, nostrum cumque fuga soluta modi labore doloribus recusandae corporis
+                                dignissimos aspernatur tenetur sint eius dolorem architecto sit.
+                                <br><br>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At earum ut commodi quod atque,
+                                minus voluptate, repellat porro sunt dolore eius dolores iure! Non, alias aliquam
+                                molestias voluptatem aliquid officiis!
+                            </p>
+                        </div>
+                        <div class="box">
+                            <p class="text_block">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint
+                                consequatur repellat ex alias architecto itaque dolore repudiandae quam magni obcaecati,
+                                nostrum harum ut earum id, libero eum adipisci iure aliquam!
+                                <br><br>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatem a
+                                dolorum aliquid, nostrum cumque fuga soluta modi labore doloribus recusandae corporis
+                                dignissimos aspernatur tenetur sint eius dolorem architecto sit.
+                                <br><br>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At earum ut commodi quod atque,
+                                minus voluptate, repellat porro sunt dolore eius dolores iure! Non, alias aliquam
+                                molestias voluptatem aliquid officiis!
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="right_seperator_box"></div>
+    </div>
+
+    <!-- Reviews Overlay to put over the other content -->
+    <div class="overlay" id="add_review">
+        <!-- A wrapper divider to store the form elements -->
+        <div class="overlay_wrapper">
+            <h2>Add Your Review!</h2>
+            <hr id="line">
+            <a href="#" class="close">&times;</a>
+            <!-- The form content in the wrapper -->
+            <div class="overlay_content">
+                <div class="overlay_container">
+                    <!-- Form -->
+                    <form id="review_form" action="auckland_university.html">
+                        <label>University</label>
+                        <!-- Select Between Universities -->
+                        <select name="university" required="required">
+                            <option value="">Choose University</option>
+                            <option value="0">Auckland</option>
+                            <option value="1">Otago</option>
+                        </select>
+                        <label>Name</label>
+                        <input name="name" required="required" type="text" placeholder="Your Name">
+                        <label>Opinion</label>
+                        <textarea name="opinion" maxlength="900" rows="4" required="required" placeholder="Your opinion here."></textarea>
+                        <label>Accommodation</label>
+                        <input name="accommodation" type="number" min="0" max="5" placeholder="0">
+                        <label>Teaching</label>
+                        <input name="teaching" type="number" min="0" max="5" placeholder="0">
+                        <label>Community</label>
+                        <input name="community" type="number" min="0" max="5" placeholder="0">
+                        <!-- Submit button to submit the form -->
+                        <input type="submit" id="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="../scripts/confetti.js"></script>
+    <script src="../scripts/review.js"></script>
+</body>
+
+</html>

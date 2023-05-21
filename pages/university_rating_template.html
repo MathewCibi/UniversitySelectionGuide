@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Selection Guide</title>
+    <link media="screen" href="../styles/university_page.css" rel="stylesheet">
+    <link media="screen" href="../styles/review.css" rel="stylesheet">
+    <script src="../scripts/swiper-bundle.min.js"></script>
+    <script src="../scripts/jQuery.js"></script>
+    <link href="../styles/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Merriweather&family=Tilt+Warp&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="header">
+        <!-- Header section and navigation bar. -->
+        <div id="top_header_box">
+            <a href="../index.html">
+                <h1>University Selection Guide</h1>
+            </a>
+            
+            <!-- Vertical stripes next to the logo image. -->
+            <div id="line_one"></div>
+            <div id="line_two"></div>
+            <div class="shielded_site">
+                <a href="#" id="shielded-logo">
+                    <img alt="shielded" src="https://shielded.co.nz/img/custom-logo.png" height="60" width="60"></a>
+                    <script src="https://staticcdn.co.nz/embed/embed.js"></script>
+                    <script>
+                        (function () {
+                            window.onload = function(){
+                                var frameName = new ds07o6pcmkorn({
+                                    openElementId: "#shielded-logo",
+                                    modalID: "modal",
+                                });
+                                frameName.init();
+                            }
+                        })();
+                    </script>
+            </div>
+        </div>
+        <div id="bottom_header_box">
+            <!-- Takes you to page that shows all Universities in New Zealand. -->
+            <a href="../index.html"><div id="home">
+                <h1>Home</h1>
+            </div></a>
+            <!-- Takes you to the reviews page to add a review. -->
+            <a href="#add_review" id="review_button">
+                <h1>Add Your Review</h1>
+            </a>
+            <!-- Takes you to the Frequently Asked Questions page. -->
+            <a href="/pages/faq.html" id="faq_button">
+                <h1>FAQs</h1>
+            </a>
+        </div>
+        <div id="university_logo">
+            <a href="LINK TO UNIVERSITY HERE"><img src="UNIVERSITY LOGO IMAGE HERE" id="university_logo_img"
+                    alt="University Logo"></a>
+        </div>
+    </div>
+    <div id="main">
+        
+        <div class="left_seperator_box"></div>
+        <div class="content_holder_box">
+            <div id="header_container">
+                <a draggable="false" href="MAIN UNIVERSITY PAGE HERE"><img id="back_arrow" src="../assets/back_arrow.png"></a>
+                <h2>University of</h2>
+                <!-- Streches Text to fill container horizontally. -->
+                <div class="strech_div">
+                    <!-- COPY THIS FOR EVERY LETTER IN UNIVERSITY NAME -->
+                    <!--<h1><a style="text-decoration:none" href=""LINK TO UNIVERSITY HERE">a</a></h1>-->
+                </div>
+            </div>
+            <div class="box_container">
+                <div class="box" id="student_opinions">
+                    <h1>Student Opinions: </h1>
+                    <hr id="line"></hr>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                        </div>
+                    </div>
+                </div>
+                <div class="box" id="student_reviews">
+                    <h1 class="review_header">Student Reviews:</h1>
+                    <hr id="line"></hr>
+                    <div id="rating_holder">
+                        <h1>Accommodation: </h1>
+                        <div class="rating_line">
+                            <div class="stars accommodation">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rating_holder">
+                        <h1>Teaching:</h1>
+                        <div class="rating_line">
+                            <div class="stars teaching">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rating_holder">
+                        <h1>Community: </h1>
+                        <div class="rating_line">
+                            <div class="stars community">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="review_counter_text">Collected from 0 student reviews.</p>
+                </div>
+            </div>
+        </div>
+        <div class="right_seperator_box"></div>
+    </div>
+
+    <!-- Reviews Overlay to put over the other content -->
+    <div class="overlay" id="add_review">
+        <!-- A wrapper divider to store the form elements -->
+        <div class="overlay_wrapper">
+            <h2>Add Your Review!</h2>
+            <hr id="line">
+            <a href="#" class="close">&times;</a>
+            <!-- The form content in the wrapper -->
+            <div class="overlay_content">
+                <div class="overlay_container">
+                    <!-- Form -->
+                    <form id="review_form" action="auckland_university.html">
+                        <label>University</label>
+                        <!-- Select Between Universities -->
+                        <select name="university" required="required">
+                            <option value="">Choose University</option>
+                            <option value="0">Auckland</option>
+                            <option value="1">Otago</option>
+                        </select>
+                        <label>Name</label>
+                        <input name="name" required="required" type="text" placeholder="Your Name">
+                        <label>Opinion</label>
+                        <textarea name="opinion" maxlength="900" rows="4" required="required" placeholder="Your opinion here."></textarea>
+                        <label>Accommodation</label>
+                        <input name="accommodation" type="number" min="0" max="5" placeholder="0">
+                        <label>Teaching</label>
+                        <input name="teaching" type="number" min="0" max="5" placeholder="0">
+                        <label>Community</label>
+                        <input name="community" type="number" min="0" max="5" placeholder="0">
+                        <!-- Submit button to submit the form -->
+                        <input type="submit" id="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+    <script src="../scripts/swiper-bundle.min.js"></script>
+    <script src="../scripts/jQuery.js"></script>
+    <script src="../scripts/university_page.js"></script>
+    <script src="../scripts/review.js"></script>
+    <script src="../scripts/confetti.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            
+            // If we need to autoplay the slides so they switch automatically.
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            
+            // Change the slide when the user drags the slides around / presses the navigation buttons.
+            on: {
+                slideChange: function () {
+                    const index_currentSlide = swiper.realIndex;
+                },
+            },
+        });
+        
+        
+        swiper.autoplay.running = true;
+        setUniversityId(0);
+        
+    </script>
+    
+</body>
+
+</html>

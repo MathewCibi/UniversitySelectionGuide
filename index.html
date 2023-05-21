@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Selection Guide</title>
+    <link media="screen" href="styles/index_style.css" rel="stylesheet">
+    <link media="screen" href="styles/review.css" rel="stylesheet">
+    <script src="scripts/swiper-bundle.min.js"></script>
+    <link href="styles/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Merriweather&family=Tilt+Warp&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="header">
+        <!-- Header section and navigation bar. -->
+        <div id="top_header_box">
+            <h1>University Selection Guide</h1>
+            <!-- Vertical stripes next to the logo image. -->
+            <div id="line_one"></div>
+            <div id="line_two"></div>
+            <div class="shielded_site">
+                <a href="#" id="shielded-logo">
+                    <img alt="shielded" src="https://shielded.co.nz/img/custom-logo.png" height="60" width="60"></a>
+                <script src="https://staticcdn.co.nz/embed/embed.js"></script>
+                <script>
+                    (function () {
+                        window.onload = function () {
+                            var frameName = new ds07o6pcmkorn({
+                                openElementId: "#shielded-logo",
+                                modalID: "modal",
+                            });
+                            frameName.init();
+                        }
+                    })();
+                </script>
+            </div>
+        </div>
+        <div id="bottom_header_box">
+            <!-- Takes you to page that shows all Universities in New Zealand. -->
+            <a href="/index.html">
+                <div id="home">
+                    <h1>Home</h1>
+                </div>
+            </a>
+            <!-- Takes you to the reviews page to add a review. -->
+            <a href="#add_review" id="review_button">
+                <h1>Add Your Review</h1>
+            </a>
+            <!-- Takes you to the Frequently Asked Questions page. -->
+            <a href="/pages/faq.html" id="faq_button">
+                <h1>FAQs</h1>
+            </a>
+        </div>
+        <div id="university_logo">
+            <img src="assets/university_auckland_logo.png" id="university_logo_img" alt="University Logo">
+        </div>
+    </div>
+    <div id="main">
+        <!-- Swiper Section for Moving Slides. -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide" data-swiper-autoplay="2000">
+                        <div class="left_seperator_box"></div>
+                        <div class="content_holder_box">
+                            <h2>University of</h2>
+                            <!-- Streches Text to fill container horizontally. -->
+                            <div class="strech_div">
+                                <h1>A</h1>
+                                <h1>u</h1>
+                                <h1>c</h1>
+                                <h1>k</h1>
+                                <h1>l</h1>
+                                <h1>a</h1>
+                                <h1>n</h1>
+                                <h1>d</h1>
+                            </div>
+                            <hr class="line">
+                            <!-- Description of the Universty. -->
+                            <p>This is the University of Auckland, a world-class institution located in the vibrant city
+                                of Auckland, New Zealand. Established in 1883, the university is the largest and
+                                highest-ranked university in New Zealand and is consistently ranked in the top 100
+                                universities worldwide.
+                            </p>
+                            <br>
+                            <p>With over 40,000 students, including 8,000 international students from more than 120
+                                countries, the University of Auckland offers a diverse and inclusive learning
+                                environment that fosters academic excellence, research innovation, and cultural
+                                understanding.
+                            </p>
+                            <br>
+                            <p>The university is home to eight faculties, which offer a wide range of undergraduate,
+                                postgraduate, and research programs in various fields such as Arts, Business, Law,
+                                Engineering, Medicine, Sciences, and more. Students benefit from world-class facilities,
+                                including modern classrooms, cutting-edge laboratories, and state-of-the-art research
+                                centres.
+                            </p>
+                            <hr class="line">
+                            <div class="select_university_button">
+                                <button onclick="select_university_button(0)" class="button-6" >Select Auckland</button>
+                            </div>
+                        </div>
+                        <div class="middle_seperator_box"></div>
+                        <!-- The image used to describe the university. -->
+                        <div class="graphic_holder_box">
+                            <div class="graphic_div">
+                                <div class="img_wrapper">
+                                    <img class="zoom blur" src="assets/clock_tower_building.png"
+                                    alt="The Clock Tower Building, Auckland University by ELLIS, Frederick, 1892-1961"
+                                    draggable="false">
+                                    <div class="img_content fade">
+                                        <h3>
+                                            The Clock Tower Building, Auckland University by
+                                            <span style="color: #954535; font-weight: 600; background-color: #1B233F; border-radius: 6px; padding: 2px; line-height: 45px;">ELLIS, Frederick, 1892-1961</span>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right_seperator_box"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide" data-swiper-autoplay="2000">
+                        <div class="left_seperator_box"></div>
+                        <div class="content_holder_box">
+                            <h2>University of</h2>
+                            <!-- Streches Text to fill container horizontally. -->
+                            <div class="strech_div">
+                                <h1>O</h1>
+                                <h1>t</h1>
+                                <h1>a</h1>
+                                <h1>g</h1>
+                                <h1>o</h1>
+                            </div>
+                            <hr class="line">
+                            <!-- Description of the Universty. -->
+                            <p>The University of Otago, New Zealand's oldest university established in 1869, offers a
+                                diverse range of academic programs across disciplines, fostering a stimulating
+                                intellectual environment. With top-tier faculty and a rigorous curriculum, students gain
+                                the knowledge and skills needed for successful careers.
+                            </p>
+                            <br>
+                            <p>Located in Dunedin, the University of Otago provides a vibrant campus life with sports,
+                                cultural events, and social clubs, promoting personal growth and inclusivity. The
+                                university's supportive atmosphere enhances the student experience.
+                            </p>
+                            <br>
+                            <p>Renowned for research excellence, the University of Otago drives innovation and offers
+                                students opportunities to engage in groundbreaking discoveries, contributing to
+                                knowledge creation.
+                            </p>
+                            <hr class="line">
+                            <div class="select_university_button">
+                                <button onclick="select_university_button(1)" class="button-6" >Select Otago</button>
+                            </div>
+                        </div>
+
+                        <div class="middle_seperator_box"></div>
+                        <!-- The image used to describe the university. -->
+                        <div class="graphic_holder_box">
+                            <div class="graphic_div">
+                                <div class="img_wrapper">
+                                    <img class="zoom blur" src="assets/otago_university_banner.jpg"
+                                    alt="Cyclist passing street art in the Warehouse Precinct. Photo credit: Dunedin NZ."
+                                    draggable="false">
+                                    <div class="img_content fade">
+                                        <h3 style="color: #e7e7e7;">
+                                            <span style="font-size: 1.75rem;">Cyclist passing street art in the Warehouse Precinct. By</span> 
+                                            <span style="color: #954535; font-weight: 600; background-color: #1B233F; border-radius: 6px; padding: 2px; line-height: 45px;">Dunedin NZ.</span>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right_seperator_box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews Overlay to put over the other content -->
+    <div class="overlay" id="add_review">
+        <!-- A wrapper divider to store the form elements -->
+        <div class="overlay_wrapper">
+            <h2>Add Your Review!</h2>
+            <hr id="line">
+            <a href="#" class="close">&times;</a>
+            <!-- The form content in the wrapper -->
+            <div class="overlay_content">
+                <div class="overlay_container">
+                    <!-- Form -->
+                    <form id="review_form" action="auckland_university.html">
+                        <label>University</label>
+                        <!-- Select Between Universities -->
+                        <select name="university" required="required">
+                            <option value="">Choose University</option>
+                            <option value="0">Auckland</option>
+                            <option value="1">Otago</option>
+                        </select>
+                        <label>Name</label>
+                        <input name="name" required="required" type="text" placeholder="Your Name">
+                        <label>Opinion</label>
+                        <textarea name="opinion" maxlength="900" rows="4" required="required" placeholder="Your opinion here."></textarea>
+                        <label>Accommodation</label>
+                        <input name="accommodation" type="number" min="0" max="5" placeholder="0">
+                        <label>Teaching</label>
+                        <input name="teaching" type="number" min="0" max="5" placeholder="0">
+                        <label>Community</label>
+                        <input name="community" type="number" min="0" max="5" placeholder="0">
+                        <!-- Submit button to submit the form -->
+                        <input type="submit" id="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left and Right buttons to change the university slides. -->
+    <div class="swiper-button-prev" id="button-prev"></div>
+    <div class="swiper-button-next" id="button-next"></div>
+
+
+    <!-- Swiper required code for the slideshow function. -->
+    <div class="swiper-pagination"></div>
+    <script src="scripts/swiper-bundle.min.js"></script>
+    <script src="scripts/review.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/confetti.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // If we need to autoplay the slides so they switch automatically.
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+
+            // Change the slide when the user drags the slides around / presses the navigation buttons.
+            on: {
+                slideChange: function () {
+                    const index_currentSlide = swiper.realIndex;
+                    swiperChange(swiper)
+                },
+            },
+        });
+
+        swiper.autoplay.running = true;
+
+    </script>
+
+</body>
+
+</html>
