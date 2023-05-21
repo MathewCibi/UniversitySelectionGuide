@@ -34,7 +34,7 @@ app.get('/post', (request, response) => {
         if (request.query.table_id == 1) { table = "otago";}
         
         // Were using a parameterized query which prevents SQL Injection!!! :woo!:
-        const query_text = "INSERT INTO auckland (name, opinion, accommodation, teaching, community) VALUES ($1, $2, $3, $4, $5);";
+        const query_text = "INSERT INTO "+table+" (name, opinion, accommodation, teaching, community) VALUES ($1, $2, $3, $4, $5);";
         
         var name = request.query.name;
         var opinion = request.query.opinion;
@@ -111,7 +111,23 @@ app.get('/getAll', (request, response) => {
     console.log(entry)
     if (entry[0] == "universityID") {
         if (entry[1] == "auckland") {
-            client.query('select * from Auckland', (error, res) => {
+            client.query('select * from auckland', (error, res) => {
+                if (!error) {
+                    console.log(res.rows);
+                    response.json({
+                        success: true,
+                        entries: res.rows
+                    });
+                } else {
+                    console.log("Error Occured: " + error.message);
+                    response.json({
+                        success: false,
+                        entries: Object.entries(request.query)
+                    });
+                }
+            });
+        } else if (entry[1] == "otago") {
+            client.query('select * from otago', (error, res) => {
                 if (!error) {
                     console.log(res.rows);
                     response.json({
@@ -128,7 +144,6 @@ app.get('/getAll', (request, response) => {
             });
         }
     }
-    
 });
 
 
